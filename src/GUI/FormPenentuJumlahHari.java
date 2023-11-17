@@ -32,31 +32,41 @@ public class FormPenentuJumlahHari extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        jScrollPane1 = new javax.swing.JScrollPane();
+        jList1 = new javax.swing.JList<>();
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         texttahun = new javax.swing.JTextField();
-        textbulan = new javax.swing.JTextField();
+        cboxbulan = new javax.swing.JComboBox<>();
         jPanel3 = new javax.swing.JPanel();
-        jLabel3 = new javax.swing.JLabel();
-        labelhari = new javax.swing.JLabel();
+        jumlahharilabel = new javax.swing.JLabel();
         jPanel4 = new javax.swing.JPanel();
         btnhitung = new javax.swing.JButton();
         btnhapus = new javax.swing.JButton();
         btnsimpan = new javax.swing.JButton();
         btnexit = new javax.swing.JButton();
 
+        jList1.setModel(new javax.swing.AbstractListModel<String>() {
+            String[] strings = { "Item 1", "Item 2", "Item 3", "Item 4", "Item 5" };
+            public int getSize() { return strings.length; }
+            public String getElementAt(int i) { return strings[i]; }
+        });
+        jScrollPane1.setViewportView(jList1);
+
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Aplikasi Penentu Jumlah Hari");
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder("Aplikasi Penentu Jumlah Hari"));
+        jPanel1.setBorder(javax.swing.BorderFactory.createTitledBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)), "Aplikasi Penentu Jumlah Hari", javax.swing.border.TitledBorder.DEFAULT_JUSTIFICATION, javax.swing.border.TitledBorder.DEFAULT_POSITION, new java.awt.Font("Tahoma", 1, 13))); // NOI18N
 
         jPanel2.setBackground(new java.awt.Color(204, 255, 204));
 
-        jLabel1.setText("Tahun  :");
+        jLabel1.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel1.setText("Tahun  ");
 
-        jLabel2.setText("Bulan   :");
+        jLabel2.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel2.setText("Bulan   ");
 
         texttahun.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -64,9 +74,11 @@ public class FormPenentuJumlahHari extends javax.swing.JFrame {
             }
         });
 
-        textbulan.addActionListener(new java.awt.event.ActionListener() {
+        cboxbulan.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        cboxbulan.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember" }));
+        cboxbulan.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                textbulanActionPerformed(evt);
+                cboxbulanActionPerformed(evt);
             }
         });
 
@@ -79,10 +91,10 @@ public class FormPenentuJumlahHari extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 98, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(jLabel2))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(texttahun)
-                    .addComponent(textbulan, javax.swing.GroupLayout.DEFAULT_SIZE, 398, Short.MAX_VALUE))
+                .addGap(47, 47, 47)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(texttahun, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(cboxbulan, javax.swing.GroupLayout.PREFERRED_SIZE, 230, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         jPanel2Layout.setVerticalGroup(
@@ -92,39 +104,33 @@ public class FormPenentuJumlahHari extends javax.swing.JFrame {
                 .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(texttahun, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 29, Short.MAX_VALUE)
-                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 21, Short.MAX_VALUE)
+                .addGroup(jPanel2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel2)
-                    .addComponent(textbulan, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap())
+                    .addComponent(cboxbulan, javax.swing.GroupLayout.PREFERRED_SIZE, 37, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(15, 15, 15))
         );
 
         jPanel3.setBackground(new java.awt.Color(255, 255, 204));
 
-        jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel3.setText("Jumlah Hari Adalah  :");
-
-        labelhari.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        labelhari.setText("0");
+        jumlahharilabel.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jumlahharilabel.setText("Jumlah Hari Adalah  ");
+        jumlahharilabel.setName("jhari"); // NOI18N
 
         javax.swing.GroupLayout jPanel3Layout = new javax.swing.GroupLayout(jPanel3);
         jPanel3.setLayout(jPanel3Layout);
         jPanel3Layout.setHorizontalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel3Layout.createSequentialGroup()
-                .addGap(47, 47, 47)
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 383, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(labelhari, javax.swing.GroupLayout.PREFERRED_SIZE, 156, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(jumlahharilabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
         jPanel3Layout.setVerticalGroup(
             jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel3Layout.createSequentialGroup()
                 .addContainerGap(29, Short.MAX_VALUE)
-                .addGroup(jPanel3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(labelhari, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(jumlahharilabel, javax.swing.GroupLayout.PREFERRED_SIZE, 29, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(23, 23, 23))
         );
 
@@ -171,7 +177,7 @@ public class FormPenentuJumlahHari extends javax.swing.JFrame {
                 .addComponent(btnsimpan, javax.swing.GroupLayout.PREFERRED_SIZE, 96, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(77, 77, 77)
                 .addComponent(btnexit, javax.swing.GroupLayout.PREFERRED_SIZE, 94, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(90, Short.MAX_VALUE))
         );
         jPanel4Layout.setVerticalGroup(
             jPanel4Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -232,18 +238,14 @@ public class FormPenentuJumlahHari extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_texttahunActionPerformed
 
-    private void textbulanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textbulanActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_textbulanActionPerformed
-
     private void btnhitungActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnhitungActionPerformed
       hitunghari();
     }//GEN-LAST:event_btnhitungActionPerformed
 
     private void btnhapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnhapusActionPerformed
         texttahun.setText("");
-        textbulan.setText("");
-        labelhari.setText("0");
+        jumlahharilabel.setText("");
+        cboxbulan.setSelectedItem("Januari");
         texttahun.requestFocus();
     }//GEN-LAST:event_btnhapusActionPerformed
 
@@ -260,6 +262,10 @@ public class FormPenentuJumlahHari extends javax.swing.JFrame {
         prosesSimpan();
     }//GEN-LAST:event_btnsimpanActionPerformed
 
+    private void cboxbulanActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cboxbulanActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cboxbulanActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -270,57 +276,56 @@ public class FormPenentuJumlahHari extends javax.swing.JFrame {
     private javax.swing.JButton btnhapus;
     private javax.swing.JButton btnhitung;
     private javax.swing.JButton btnsimpan;
+    private javax.swing.JComboBox<String> cboxbulan;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
+    private javax.swing.JList<String> jList1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
     private javax.swing.JPanel jPanel4;
-    private javax.swing.JLabel labelhari;
-    private javax.swing.JTextField textbulan;
+    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel jumlahharilabel;
     private javax.swing.JTextField texttahun;
     // End of variables declaration//GEN-END:variables
 
     private void hitunghari() {
-       int tahun = Integer.valueOf(texttahun.getText());
-       int bulan = Integer.parseInt(textbulan.getText());
-       int hari = 0;
-       switch(bulan){
-           case 1:
-           case 3:
-           case 5:
-           case 7:
-           case 8:
-           case 10:
-           case 12:
-               hari = 31;
-               break;
-           case 4:
-           case 6:
-           case 9:
-           case 11:
-               hari = 30;
-               break;
-           case 2:
-               hari = 28;
-               if( (tahun % 4 == 0 && tahun % 100 != 0) || (tahun % 400 == 0)){
-                   hari = 29;
-               }
-               break;
-       }
-       labelhari.setText(hari+"");
+      if(texttahun.getText() .isEmpty()){
+          JOptionPane.showMessageDialog(null, "Error  : isian tahun kosong!" ,
+                  "Error : isian tahun kosong!", JOptionPane.WARNING_MESSAGE);
+      }else{
+          int tahun = Integer.parseInt(texttahun.getText());
+          int jumlahhari;
+          if(cboxbulan.getSelectedItem().equals("Februari")){
+              if( (tahun % 4 == 0) && ! (tahun % 100 == 0) || ( tahun % 400 == 0))
+                  jumlahhari = 29;
+              else jumlahhari = 28;
+          }else if(cboxbulan.getSelectedItem().equals("April") ||
+                  cboxbulan.getSelectedItem().equals("Juni") ||
+                  cboxbulan.getSelectedItem().equals("September") ||
+                  cboxbulan.getSelectedItem().equals("November")){
+              jumlahhari = 30;
+          } else{
+              jumlahhari = 31;
+          }
+                  jumlahharilabel.setText("Jumlah Hari Pada Bulan  "+ cboxbulan.getSelectedItem() + 
+                          " Tahun "+ tahun + " Adalah " +jumlahhari);
+      }
     }
 
     private void prosesSimpan() {
         try {
+            //buat file
             BufferedWriter out = new BufferedWriter(
                     new FileWriter("jumlahhari.txt"));
-            out.write("jumlah hari pada tahun " +texttahun.getText()
-                    + " dan bulan " +textbulan.getText()+" adalah " +labelhari.getText());
+            //simpan ke file
+            out.write (jumlahharilabel.getText());
+            //tampilkan dialog  bila berhasil
+            JOptionPane.showMessageDialog(null, "Berhasil disimpan dalam file");
+            // tutup output stream
             out.close();
         }catch(Exception e){  
-            System.out.println("error!!");
+            System.err.println("error :" e.getMessage());
         }
     }
 
